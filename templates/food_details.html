@@ -1,0 +1,35 @@
+<!-- templates/food_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Donate Food</h1>
+    <form action="{{ url_for('food_details') }}" method="POST">
+        <label>Meal Type:</label><br>
+        <input type="radio" id="veg" name="meal_type" value="Veg" required>
+        <label for="veg">Veg</label>
+        <input type="radio" id="nonveg" name="meal_type" value="Non-Veg" required>
+        <label for="nonveg">Non-Veg</label><br><br>
+
+        <label>Meal Time:</label><br>
+        <input type="checkbox" id="breakfast" name="meal_time" value="Breakfast">
+        <label for="breakfast">Breakfast</label>
+        <input type="checkbox" id="lunch" name="meal_time" value="Lunch">
+        <label for="lunch">Lunch</label>
+        <input type="checkbox" id="dinner" name="meal_time" value="Dinner">
+        <label for="dinner">Dinner</label><br><br>
+
+        <label>Quantity (people):</label>
+        <input type="number" name="quantity" min="1" max="60" required><br><br>
+
+        <label>When was the meal prepared (hours):</label>
+        <input type="number" name="time_prepared" min="1" max="12" required><br><br>
+
+        <button type="submit">Post</button>
+    </form>
+</body>
+</html>

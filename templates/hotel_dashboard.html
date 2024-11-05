@@ -1,0 +1,128 @@
+-<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Bliss</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='icomoon.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='nice-select.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css') }}">
+<!-- Responsive CSS -->
+<!-- Favicon -->
+<!-- Tweaks for older IEs -->
+
+
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+     
+      <!-- end loader -->
+      <div class="full_bg">
+         <!-- header -->
+         <header class="header-area">
+            <div class="container">
+               <div class="row d_flex">
+                  <div class=" col-md-3 col-sm-3">
+                     <div class="logo">
+                        <a href="index.html">Bliss</a>
+                     </div>
+                  </div>
+                  <div class="col-md-9 col-sm-9">
+                     <div class="navbar-area">
+                        <nav class="site-navbar">
+                           <ul>
+                              <li><a class="active" href="/">Home</a></li>
+                              <li><a href="/about">About</a></li>
+                              <li><a href="/service">Service</a></li>
+                              <li><a href="/blog">Blog</a></li>
+                              <li><a href="/contact">Contact us</a></li>
+                              <li class="d_none"><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                              <li class="d_none"><a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                           </ul>
+                           <button class="nav-toggler">
+                           <span></span>
+                           </button>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+         <!-- end header inner -->
+         <!-- top -->
+         <div class="slider_main">
+            <!-- carousel code -->
+            <div id="banner1" class="carousel slide">
+               <ol class="carousel-indicators">
+                  <li data-target="#banner1" data-slide-to="0" class="active"></li>
+                  <li data-target="#banner1" data-slide-to="1"></li>
+                  <li data-target="#banner1" data-slide-to="2"></li>
+               </ol>
+               <div class="carousel-inner">
+                  <!-- first slide -->
+                  <div class="carousel-item active">
+                     <div class="container">
+                        <div class="carousel-caption relative">
+                           <div class="row d_flex">
+                              <div class="col-md-5">
+                                 <div class="creative">
+                                    <h1>Hotel Dashboard</h1>
+                                    <p>Welcome to your dashboard. From here, you can post available food items for donation and view current food donation listings.</p>
+                                    <a class="read_more" href="/food_details">Post food</a>
+                                    <a class="read_more" href="/hotel_donations">View donations</a>
+                                 </div>
+                              </div>
+                              <div class="col-md-7">
+                                 <div class="row mar_right">
+                                    <div class="col-md-6">
+                                       <div class="agency">
+                                          <figure><img src="{{ url_for('static', filename='images/image1.png') }}" alt="#kk"/></figure>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="agency">
+                                          <figure><img src="{{ url_for('static', filename='images/home.png') }}" alt="#"/></figure>
+                                          
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- second slide -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/bootstrap-datepicker.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>

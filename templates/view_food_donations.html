@@ -1,0 +1,83 @@
+<!-- templates/view_food_donations.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Donations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+        <!-- basic -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- mobile metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <!-- site metas -->
+        <title>Bliss</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- bootstrap css -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+        <link rel="stylesheet" href="{{ url_for('static', filename='icomoon.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='nice-select.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css') }}">
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+</head>
+<body>
+    <div class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage text_align_center">
+                        <h2>Latest Food Donations</h2>
+                        <p>Discover recent food donations available for volunteers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for donation in donations %}
+                <div class="col-md-4">
+                    <div id="ho_shad" class="services_box text_align_left">
+                        <p>Posted: {{donation.donation_time}}</p>
+                        <figure>
+                            <img src="{{ url_for('static', filename='images/food_placeholder.png') }}" alt="Food Donation Image" width="300" height="200"/>
+                        </figure>
+                        <p><strong>Meal Type:</strong> {{ donation.meal_type }}<br>
+                        <strong>Meal Time:</strong> {{ donation.meal_time }}<br>
+                        <strong>Quantity:</strong> {{ donation.quantity }} servings<br>
+                        <strong>Time Prepared:</strong> {{ donation.time_prepared }} hours ago<br>
+                        <strong>Status:</strong> 
+                        {% if donation.status == 'Accepted' %}
+                            Accepted ✔️
+                        {% else %}
+                            Pending
+                        {% endif %}
+                        </p>
+                        
+                        <!-- Show the Accept button only if the status is not 'Accepted' -->
+                        {% if donation.status != 'Accepted' %}
+                        <form action="{{ url_for('accept_donation', donation_id=donation.id) }}" method="post">
+                            <button class="read_more" type="submit">Accept</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+    
+    <a href="/hotel_dashboard">Back to Dashboard</a>
+</body>
+</html>
